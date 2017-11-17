@@ -802,7 +802,6 @@ public class Principal extends javax.swing.JFrame {
                 copas = e.getCopas();
                 estadio = e.getEstadio();
                 DefaultMutableTreeNode b = new DefaultMutableTreeNode(new Equipo(nombreq, presu, copas, estadio));
-                nodo.removeAllChildren();
                 nodo.add(b);
                 b.add(a);
                 modelo.reload();
