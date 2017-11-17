@@ -73,13 +73,23 @@ public class Principal extends javax.swing.JFrame {
         jl_jugador2 = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         j_arbol = new javax.swing.JTree();
-        jButton2 = new javax.swing.JButton();
+        jb_comprar = new javax.swing.JButton();
         pp_menu = new javax.swing.JPopupMenu();
         Eliminar = new javax.swing.JMenuItem();
         Modificar = new javax.swing.JMenuItem();
         pp_menu2 = new javax.swing.JPopupMenu();
         Eliminar2 = new javax.swing.JMenuItem();
         Modificar2 = new javax.swing.JMenuItem();
+        modificare = new javax.swing.JDialog();
+        jLabel16 = new javax.swing.JLabel();
+        tf_nombrem1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        tf_presupuestom = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        sp_copasm = new javax.swing.JSpinner();
+        jLabel19 = new javax.swing.JLabel();
+        tf_estadiom = new javax.swing.JTextField();
+        jb_aceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -286,36 +296,44 @@ public class Principal extends javax.swing.JFrame {
         j_arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane4.setViewportView(j_arbol);
 
-        jButton2.setText("Comprar jugador seleccionado");
+        jb_comprar.setText("Comprar jugador seleccionado");
+        jb_comprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_comprarMouseClicked(evt);
+            }
+        });
+        jb_comprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_comprarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_comprarLayout = new javax.swing.GroupLayout(jd_comprar.getContentPane());
         jd_comprar.getContentPane().setLayout(jd_comprarLayout);
         jd_comprarLayout.setHorizontalGroup(
             jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_comprarLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jb_comprar)
+                .addGap(47, 47, 47)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
+                .addGap(64, 64, 64))
         );
         jd_comprarLayout.setVerticalGroup(
             jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_comprarLayout.createSequentialGroup()
                 .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_comprarLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(210, 210, 210)
+                        .addComponent(jb_comprar))
+                    .addGroup(jd_comprarLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
                         .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jd_comprarLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jd_comprarLayout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jButton2)))
-                .addContainerGap(278, Short.MAX_VALUE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         Eliminar.setText("Eliminar");
@@ -344,6 +362,75 @@ public class Principal extends javax.swing.JFrame {
 
         Modificar2.setText("Modificar");
         pp_menu2.add(Modificar2);
+
+        jLabel16.setText("Nombre");
+
+        tf_nombrem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombrem1ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Presupuesto");
+
+        jLabel18.setText("Copas");
+
+        jLabel19.setText("Estadio");
+
+        jb_aceptar.setText("Aceptar");
+        jb_aceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_aceptarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout modificareLayout = new javax.swing.GroupLayout(modificare.getContentPane());
+        modificare.getContentPane().setLayout(modificareLayout);
+        modificareLayout.setHorizontalGroup(
+            modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificareLayout.createSequentialGroup()
+                .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modificareLayout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19))
+                        .addGap(37, 37, 37)
+                        .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_nombrem1)
+                            .addComponent(tf_presupuestom)
+                            .addComponent(sp_copasm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_estadiom, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
+                    .addGroup(modificareLayout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jb_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(334, Short.MAX_VALUE))
+        );
+        modificareLayout.setVerticalGroup(
+            modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificareLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_nombrem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(34, 34, 34)
+                .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_presupuestom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(sp_copasm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(modificareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_estadiom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(jb_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(455, 455, 0, 0));
@@ -488,11 +575,17 @@ public class Principal extends javax.swing.JFrame {
             DefaultListModel modelo=(DefaultListModel)jl_equipo.getModel();
             
             modelo.remove(jl_equipo.getSelectedIndex());
+            
            
         }
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+        
+        modificare.setModal(true);
+        modificare.pack();
+        modificare.setLocationRelativeTo(jd_agregar);
+        modificare.setVisible(true);
         
     }//GEN-LAST:event_ModificarActionPerformed
 
@@ -507,15 +600,45 @@ public class Principal extends javax.swing.JFrame {
         int resp=JOptionPane.showConfirmDialog(jd_agregar,"seguro que desea eliminar","confirmar",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(resp==JOptionPane.OK_OPTION){
             DefaultListModel modelo=(DefaultListModel)jl_jugador.getModel();
-            
+            DefaultListModel modelo2=(DefaultListModel)jl_jugador2.getModel();
             modelo.remove(jl_jugador.getSelectedIndex());
+            modelo2.remove(jl_jugador.getSelectedIndex());
            
         }
     }//GEN-LAST:event_Eliminar2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jb_comprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_comprarActionPerformed
+        
+    }//GEN-LAST:event_jb_comprarActionPerformed
+
+    private void jb_comprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_comprarMouseClicked
+        DefaultListModel modelo=(DefaultListModel)jl_jugador2.getModel();
+        Jugador t=(Jugador)modelo.get(jl_jugador2.getSelectedIndex());
+         DefaultTreeModel modeloarbol=(DefaultTreeModel)j_arbol.getModel();
+         DefaultMutableTreeNode raiz=(DefaultMutableTreeNode)modeloarbol.getRoot();
+         String disponible=t.getDisponibilidad();
+         DefaultMutableTreeNode jugador;
+       
+    }//GEN-LAST:event_jb_comprarMouseClicked
+
+    private void tf_nombrem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombrem1ActionPerformed
+        
+    }//GEN-LAST:event_tf_nombrem1ActionPerformed
+
+    private void jb_aceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_aceptarMouseClicked
+        Equipo equipo =jl_equipo.getSelectedValue();
+        DefaultListModel modelo=(DefaultListModel)jl_equipo.getModel();
+        modelo.remove(jl_equipo.getSelectedIndex());
+        modelo.addElement(new Equipo(tf_nombrem1.getText(),Double.parseDouble(tf_presupuestom.getText()),(Integer)sp_copasm.getValue(),tf_estadiom.getText()));
+        jl_equipo.setModel(modelo);
+        tf_nombrem1.setText("");
+        tf_presupuestom.setText("");
+        sp_copasm.setValue(0);
+        tf_estadiom.setText("");
+        modificare.dispose();
+    }//GEN-LAST:event_jb_aceptarMouseClicked
+
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -557,7 +680,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_disponibilidad;
     private javax.swing.JComboBox<String> cb_posicion;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -566,6 +688,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -579,24 +705,31 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTree j_arbol;
+    private javax.swing.JButton jb_aceptar;
     private javax.swing.JButton jb_agregarequipo;
     private javax.swing.JButton jb_agregarjugador;
+    private javax.swing.JButton jb_comprar;
     private javax.swing.JDialog jd_agregar;
     private javax.swing.JDialog jd_comprar;
     private javax.swing.JList<Equipo> jl_equipo;
-    private javax.swing.JList<String> jl_jugador;
+    private javax.swing.JList<Jugador> jl_jugador;
     private javax.swing.JList<String> jl_jugador2;
+    private javax.swing.JDialog modificare;
     private javax.swing.JPopupMenu pp_menu;
     private javax.swing.JPopupMenu pp_menu2;
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
     private javax.swing.JSpinner sp_copas;
+    private javax.swing.JSpinner sp_copasm;
     private javax.swing.JTextField tf_estadio;
+    private javax.swing.JTextField tf_estadiom;
     private javax.swing.JTextField tf_habilidad;
     private javax.swing.JTextField tf_nombree;
     private javax.swing.JTextField tf_nombrej;
+    private javax.swing.JTextField tf_nombrem1;
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_presupuesto;
+    private javax.swing.JTextField tf_presupuestom;
     private javax.swing.JTextField tf_resistencia;
     private javax.swing.JTextField tf_tecnica;
     // End of variables declaration//GEN-END:variables
