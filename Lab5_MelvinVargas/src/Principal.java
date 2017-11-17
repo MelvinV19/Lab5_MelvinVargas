@@ -2,6 +2,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -73,6 +74,12 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         j_arbol = new javax.swing.JTree();
         jButton2 = new javax.swing.JButton();
+        pp_menu = new javax.swing.JPopupMenu();
+        Eliminar = new javax.swing.JMenuItem();
+        Modificar = new javax.swing.JMenuItem();
+        pp_menu2 = new javax.swing.JPopupMenu();
+        Eliminar2 = new javax.swing.JMenuItem();
+        Modificar2 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -124,11 +131,21 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jl_equipo.setModel(new DefaultListModel());
+        jl_equipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_equipoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_equipo);
 
         jLabel14.setText("Lista de equipos");
 
         jl_jugador.setModel(new DefaultListModel());
+        jl_jugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_jugadorMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jl_jugador);
 
         jLabel15.setText("Lista de jugadores");
@@ -301,6 +318,33 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(278, Short.MAX_VALUE))
         );
 
+        Eliminar.setText("Eliminar");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
+        pp_menu.add(Eliminar);
+
+        Modificar.setText("Modificar");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarActionPerformed(evt);
+            }
+        });
+        pp_menu.add(Modificar);
+
+        Eliminar2.setText("Eliminar");
+        Eliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar2ActionPerformed(evt);
+            }
+        });
+        pp_menu2.add(Eliminar2);
+
+        Modificar2.setText("Modificar");
+        pp_menu2.add(Modificar2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(455, 455, 0, 0));
         setMinimumSize(new java.awt.Dimension(800, 550));
@@ -431,6 +475,44 @@ public class Principal extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jb_agregarjugadorMouseClicked
 
+    private void jl_equipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_equipoMouseClicked
+        if(evt.isMetaDown()){
+            
+            pp_menu.show(evt.getComponent(),evt.getX(),evt.getY());
+        }
+    }//GEN-LAST:event_jl_equipoMouseClicked
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        int resp=JOptionPane.showConfirmDialog(jd_agregar,"seguro que desea eliminar","confirmar",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(resp==JOptionPane.OK_OPTION){
+            DefaultListModel modelo=(DefaultListModel)jl_equipo.getModel();
+            
+            modelo.remove(jl_equipo.getSelectedIndex());
+           
+        }
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+        
+    }//GEN-LAST:event_ModificarActionPerformed
+
+    private void jl_jugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_jugadorMouseClicked
+        if(evt.isMetaDown()){
+            
+            pp_menu2.show(evt.getComponent(),evt.getX(),evt.getY());
+        }
+    }//GEN-LAST:event_jl_jugadorMouseClicked
+
+    private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
+        int resp=JOptionPane.showConfirmDialog(jd_agregar,"seguro que desea eliminar","confirmar",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(resp==JOptionPane.OK_OPTION){
+            DefaultListModel modelo=(DefaultListModel)jl_jugador.getModel();
+            
+            modelo.remove(jl_jugador.getSelectedIndex());
+           
+        }
+    }//GEN-LAST:event_Eliminar2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,6 +550,10 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem Eliminar2;
+    private javax.swing.JMenuItem Modificar;
+    private javax.swing.JMenuItem Modificar2;
     private javax.swing.ButtonGroup bg_disponibilidad;
     private javax.swing.JComboBox<String> cb_posicion;
     private javax.swing.JButton jButton1;
@@ -497,9 +583,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_agregarjugador;
     private javax.swing.JDialog jd_agregar;
     private javax.swing.JDialog jd_comprar;
-    private javax.swing.JList<String> jl_equipo;
+    private javax.swing.JList<Equipo> jl_equipo;
     private javax.swing.JList<String> jl_jugador;
     private javax.swing.JList<String> jl_jugador2;
+    private javax.swing.JPopupMenu pp_menu;
+    private javax.swing.JPopupMenu pp_menu2;
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
     private javax.swing.JSpinner sp_copas;
@@ -512,4 +600,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_resistencia;
     private javax.swing.JTextField tf_tecnica;
     // End of variables declaration//GEN-END:variables
+DefaultMutableTreeNode nodo_seleccionado;
+
 }
