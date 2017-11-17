@@ -74,6 +74,10 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         j_arbol = new javax.swing.JTree();
         jb_comprar = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jl_equipo2 = new javax.swing.JList<>();
+        jLabel28 = new javax.swing.JLabel();
         pp_menu = new javax.swing.JPopupMenu();
         Eliminar = new javax.swing.JMenuItem();
         Modificar = new javax.swing.JMenuItem();
@@ -90,6 +94,23 @@ public class Principal extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         tf_estadiom = new javax.swing.JTextField();
         jb_aceptar = new javax.swing.JButton();
+        modificarj = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        tf_nombrem = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        tf_preciom = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        cb_posicion1 = new javax.swing.JComboBox<>();
+        rb3 = new javax.swing.JRadioButton();
+        rb4 = new javax.swing.JRadioButton();
+        tf_habilidadm = new javax.swing.JTextField();
+        tf_tecnicam = new javax.swing.JTextField();
+        tf_resistenciam = new javax.swing.JTextField();
+        jb_aceptar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -121,7 +142,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel10.setText("Disponibilidad");
 
         bg_disponibilidad.add(rb1);
-        rb1.setSelected(true);
         rb1.setText("Disponible");
 
         bg_disponibilidad.add(rb2);
@@ -308,18 +328,37 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel27.setText("Lista de jugadores");
+
+        jScrollPane5.setViewportView(jl_equipo2);
+
+        jLabel28.setText("Lista de equipos");
+
         javax.swing.GroupLayout jd_comprarLayout = new javax.swing.GroupLayout(jd_comprar.getContentPane());
         jd_comprar.getContentPane().setLayout(jd_comprarLayout);
         jd_comprarLayout.setHorizontalGroup(
             jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_comprarLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jb_comprar)
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_comprarLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jd_comprarLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jd_comprarLayout.createSequentialGroup()
+                        .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_comprarLayout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                                .addComponent(jb_comprar)
+                                .addGap(47, 47, 47))
+                            .addGroup(jd_comprarLayout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))))
         );
         jd_comprarLayout.setVerticalGroup(
             jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,11 +368,18 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(210, 210, 210)
                         .addComponent(jb_comprar))
                     .addGroup(jd_comprarLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(270, Short.MAX_VALUE))
+                            .addGroup(jd_comprarLayout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel28)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Eliminar.setText("Eliminar");
@@ -361,6 +407,11 @@ public class Principal extends javax.swing.JFrame {
         pp_menu2.add(Eliminar2);
 
         Modificar2.setText("Modificar");
+        Modificar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Modificar2ActionPerformed(evt);
+            }
+        });
         pp_menu2.add(Modificar2);
 
         jLabel16.setText("Nombre");
@@ -430,6 +481,113 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(jb_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(218, Short.MAX_VALUE))
+        );
+
+        jLabel20.setText("Nombre");
+
+        jLabel21.setText("Precio");
+
+        jLabel22.setText("Posicion");
+
+        jLabel23.setText("Disponibilidad");
+
+        jLabel24.setText("Habilidad");
+
+        jLabel25.setText("Tecnica");
+
+        jLabel26.setText("Resistencia");
+
+        cb_posicion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Atacante", "Mediocampista", "Defensa", "Portero", " " }));
+
+        bg_disponibilidad.add(rb3);
+        rb3.setSelected(true);
+        rb3.setText("Disponible");
+
+        bg_disponibilidad.add(rb4);
+        rb4.setText("No Disponible");
+
+        jb_aceptar1.setText("Aceptar");
+        jb_aceptar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_aceptar1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout modificarjLayout = new javax.swing.GroupLayout(modificarj.getContentPane());
+        modificarj.getContentPane().setLayout(modificarjLayout);
+        modificarjLayout.setHorizontalGroup(
+            modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificarjLayout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modificarjLayout.createSequentialGroup()
+                        .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22))
+                        .addGap(44, 44, 44)
+                        .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_posicion1, 0, 220, Short.MAX_VALUE)
+                            .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_nombrem)
+                                .addComponent(tf_preciom, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
+                    .addGroup(modificarjLayout.createSequentialGroup()
+                        .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26))
+                        .addGap(18, 18, 18)
+                        .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_habilidadm)
+                            .addComponent(tf_tecnicam)
+                            .addGroup(modificarjLayout.createSequentialGroup()
+                                .addComponent(rb3)
+                                .addGap(28, 28, 28)
+                                .addComponent(rb4)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(tf_resistenciam))))
+                .addGap(324, 324, 324))
+            .addGroup(modificarjLayout.createSequentialGroup()
+                .addGap(306, 306, 306)
+                .addComponent(jb_aceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        modificarjLayout.setVerticalGroup(
+            modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificarjLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_nombrem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(tf_preciom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(cb_posicion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(rb3)
+                    .addComponent(rb4))
+                .addGap(34, 34, 34)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(tf_habilidadm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(tf_tecnicam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(modificarjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(tf_resistenciam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jb_aceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -533,6 +691,7 @@ public class Principal extends javax.swing.JFrame {
         raiz.add(nodo_equipo);
         m.reload();
         jl_equipo.setModel(modelo);
+        jl_equipo2.setModel(modelo);
         tf_nombree.setText("");
         tf_presupuesto.setText("");
         sp_copas.setValue(0);
@@ -573,8 +732,10 @@ public class Principal extends javax.swing.JFrame {
         int resp=JOptionPane.showConfirmDialog(jd_agregar,"seguro que desea eliminar","confirmar",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(resp==JOptionPane.OK_OPTION){
             DefaultListModel modelo=(DefaultListModel)jl_equipo.getModel();
-            
+            DefaultListModel modelo2=(DefaultListModel)jl_equipo2.getModel();
             modelo.remove(jl_equipo.getSelectedIndex());
+            modelo2.remove(jl_equipo.getSelectedIndex());
+            
             
            
         }
@@ -631,12 +792,44 @@ public class Principal extends javax.swing.JFrame {
         modelo.remove(jl_equipo.getSelectedIndex());
         modelo.addElement(new Equipo(tf_nombrem1.getText(),Double.parseDouble(tf_presupuestom.getText()),(Integer)sp_copasm.getValue(),tf_estadiom.getText()));
         jl_equipo.setModel(modelo);
+        jl_equipo2.setModel(modelo);
+        
         tf_nombrem1.setText("");
         tf_presupuestom.setText("");
         sp_copasm.setValue(0);
         tf_estadiom.setText("");
         modificare.dispose();
     }//GEN-LAST:event_jb_aceptarMouseClicked
+
+    private void Modificar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Modificar2ActionPerformed
+        modificarj.setModal(true);
+        modificarj.pack();
+        modificarj.setLocationRelativeTo(jd_agregar);
+        modificarj.setVisible(true);
+    }//GEN-LAST:event_Modificar2ActionPerformed
+
+    private void jb_aceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_aceptar1MouseClicked
+
+        DefaultListModel modelo=(DefaultListModel)jl_jugador.getModel();
+        modelo.remove(jl_jugador.getSelectedIndex());
+        String disponible="";
+       if(rb3.isSelected()){
+           disponible="disponible";
+       }
+       if(rb4.isSelected()){
+           disponible="no disponible";
+       }
+        modelo.addElement(new Jugador(tf_nombrem.getText(),Double.parseDouble(tf_preciom.getText()),(String)cb_posicion1.getSelectedItem(),disponible,Integer.parseInt(tf_habilidadm.getText()),Integer.parseInt(tf_tecnicam.getText()),Integer.parseInt(tf_resistenciam.getText())));
+        jl_jugador.setModel(modelo);
+        jl_jugador2.setModel(modelo);
+        tf_nombrem.setText("");
+        tf_preciom.setText("");
+        cb_posicion1.setSelectedIndex(0);
+        tf_habilidadm.setText("");
+        tf_tecnicam.setText("");
+        tf_resistenciam.setText("");
+        modificarj.dispose();
+    }//GEN-LAST:event_jb_aceptar1MouseClicked
 
    
     public static void main(String args[]) {
@@ -679,6 +872,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Modificar2;
     private javax.swing.ButtonGroup bg_disponibilidad;
     private javax.swing.JComboBox<String> cb_posicion;
+    private javax.swing.JComboBox<String> cb_posicion1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -693,6 +887,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -704,34 +907,45 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTree j_arbol;
     private javax.swing.JButton jb_aceptar;
+    private javax.swing.JButton jb_aceptar1;
     private javax.swing.JButton jb_agregarequipo;
     private javax.swing.JButton jb_agregarjugador;
     private javax.swing.JButton jb_comprar;
     private javax.swing.JDialog jd_agregar;
     private javax.swing.JDialog jd_comprar;
     private javax.swing.JList<Equipo> jl_equipo;
+    private javax.swing.JList<String> jl_equipo2;
     private javax.swing.JList<Jugador> jl_jugador;
     private javax.swing.JList<String> jl_jugador2;
     private javax.swing.JDialog modificare;
+    private javax.swing.JDialog modificarj;
     private javax.swing.JPopupMenu pp_menu;
     private javax.swing.JPopupMenu pp_menu2;
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
+    private javax.swing.JRadioButton rb3;
+    private javax.swing.JRadioButton rb4;
     private javax.swing.JSpinner sp_copas;
     private javax.swing.JSpinner sp_copasm;
     private javax.swing.JTextField tf_estadio;
     private javax.swing.JTextField tf_estadiom;
     private javax.swing.JTextField tf_habilidad;
+    private javax.swing.JTextField tf_habilidadm;
     private javax.swing.JTextField tf_nombree;
     private javax.swing.JTextField tf_nombrej;
+    private javax.swing.JTextField tf_nombrem;
     private javax.swing.JTextField tf_nombrem1;
     private javax.swing.JTextField tf_precio;
+    private javax.swing.JTextField tf_preciom;
     private javax.swing.JTextField tf_presupuesto;
     private javax.swing.JTextField tf_presupuestom;
     private javax.swing.JTextField tf_resistencia;
+    private javax.swing.JTextField tf_resistenciam;
     private javax.swing.JTextField tf_tecnica;
+    private javax.swing.JTextField tf_tecnicam;
     // End of variables declaration//GEN-END:variables
 DefaultMutableTreeNode nodo_seleccionado;
 
