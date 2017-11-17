@@ -351,32 +351,33 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_comprarLayout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                                .addComponent(jb_comprar)
-                                .addGap(47, 47, 47))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jd_comprarLayout.createSequentialGroup()
                                 .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                                .addComponent(jb_comprar)
+                                .addGap(64, 64, 64)))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64))))
         );
         jd_comprarLayout.setVerticalGroup(
             jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_comprarLayout.createSequentialGroup()
-                .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jd_comprarLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(jb_comprar))
-                    .addGroup(jd_comprarLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jd_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_comprarLayout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel28)))))
+                                .addComponent(jLabel28))
+                            .addGroup(jd_comprarLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jb_comprar)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                 .addContainerGap())
@@ -773,12 +774,41 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_comprarActionPerformed
 
     private void jb_comprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_comprarMouseClicked
-        DefaultListModel modelo=(DefaultListModel)jl_jugador2.getModel();
-        Jugador t=(Jugador)modelo.get(jl_jugador2.getSelectedIndex());
-         DefaultTreeModel modeloarbol=(DefaultTreeModel)j_arbol.getModel();
-         DefaultMutableTreeNode raiz=(DefaultMutableTreeNode)modeloarbol.getRoot();
-         String disponible=t.getDisponibilidad();
-         DefaultMutableTreeNode jugador;
+        if (jl_equipo2.getSelectedIndex() >= 0) {
+            if (jl_jugador2.getSelectedIndex() >= 0) {
+                DefaultTreeModel modelo = (DefaultTreeModel) j_arbol.getModel();
+                DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) modelo.getRoot();
+                DefaultListModel modelolista1 = (DefaultListModel) jl_equipo2.getModel();
+                DefaultListModel modelolista2 = (DefaultListModel) jl_jugador2.getModel();
+                Equipo e = (Equipo) modelolista1.get(jl_equipo2.getSelectedIndex());
+                Jugador j = (Jugador) modelolista2.get(jl_jugador2.getSelectedIndex());
+                String nombre, pos, disp;
+                double precioj;
+                int hab, tec, res;
+                String nombreq;
+                double presu;
+                int copas;
+                String estadio;
+                nombre = j.getNombre();
+                pos = j.getPosicion();
+                disp = j.getDisponibilidad();
+                precioj = j.getPrecio();
+                hab = j.getHabilidad();
+                tec = j.getTecnica();
+                res = j.getResistencia();
+                DefaultMutableTreeNode a = new DefaultMutableTreeNode(new Jugador(nombre, precioj, pos, disp, hab, tec, res));
+                nombreq = e.getNombre();
+                presu = e.getPresupuesto();
+                copas = e.getCopas();
+                estadio = e.getEstadio();
+                DefaultMutableTreeNode b = new DefaultMutableTreeNode(new Equipo(nombreq, presu, copas, estadio));
+                nodo.removeAllChildren();
+                nodo.add(b);
+                b.add(a);
+                modelo.reload();
+            }
+
+        }
        
     }//GEN-LAST:event_jb_comprarMouseClicked
 
